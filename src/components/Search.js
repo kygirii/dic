@@ -12,7 +12,6 @@ const SearchWord = (props) => {
       <div>
             <FormLabel>검색</FormLabel>
                 <Paper>
-
                     <Grid container>
                         <Grid item xs={8}>
                         <Grid container 
