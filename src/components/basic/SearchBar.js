@@ -3,8 +3,27 @@ import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
-import { Typography, Grid, Menu, MenuItem } from '@material-ui/core';
+import { Typography, Grid, Menu, MenuItem, Input, FormControl, InputAdornment } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import clsx from 'clsx';
+import makeStyles from "@material-ui/core/styles/makeStyles";
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    margin: {
+        margin: theme.spacing(1),
+    },
+    withoutLabel: {
+        marginTop: theme.spacing(3),
+    },
+    textField: {
+        width: '359px',
+    },
+}));
 
 
 
@@ -32,9 +51,6 @@ class SearchBar extends Component {
         }) 
        
     };
-    
- 
-
 
     render() {
        const style={
@@ -45,32 +61,49 @@ class SearchBar extends Component {
        const { changeKeyword, searchBtnOnClick, keyword } = this.props; 
 
        console.log('in the render searchLang', this.state.searchLang);
-
+        const classes = this.props;
        
         return (
             
             <div style={style}>
-                <Grid container>
-                    <Grid item xs={4} container >
-                           
-                    </Grid> 
-                </Grid>
-                     <Grid container alignItems="center" direction="row" justify="center" spacing={2} > 
+                {/*<Grid container>*/}
+                {/*    <Grid item xs={4} container >*/}
+                {/*           */}
+                {/*    </Grid> */}
+                {/*</Grid>*/}
+                     <Grid container alignItems="center" direction="row" justify="center" spacing={6} >
                         <Grid item xs={4} container >
-                            <Typography>{this.state.searchLang}</Typography>
+                            <Typography>질의어 {this.state.searchLang}</Typography>
                         </Grid>
-                        <Grid item xs={6} container alignItems="center" justify="center" style={{backgroundColor:"#fff"}}>
-                            <Grid item xs={10}>
-                                <Typography>질의어</Typography>
-                                <InputBase
-                                    placeholder={"검색어 입력"} 
+                        <Grid item xs={6} container alignItems="center" justify="center" >
+                            <Grid item xs={20}>
+                                <FormControl className={clsx(classes.margin, classes.withoutLabel, classes.textField)}>
+                                    <Input
+                                        id="standard-adornment-search"
+                                        value={keyword}
+                                        onChange={changeKeyword}
+                                        endAdornment={
+                                                        <InputAdornment position="end">
+                                                            <IconButton type="submit" aria-label="search" style={{backgroundColor:"#fff"}}>
+                                                                <SearchIcon
+                                                                onClick={searchBtnOnClick}
+                                                                />
+                                                            </IconButton>
+                                                        </InputAdornment>
+                                                     }
+                                        inputProps={{'aria-label' : 'search'}}
+                                        placeholder={"검색어를 입력해주세요"}
+                                    />
+                                </FormControl>
+                                {/*                <InputBase
+                                    placeholder={"검색어를 입력해주세요"}
                                     inputProps={{ 'aria-label': 'Search' }}
                                     onChange = {changeKeyword}
                                     value={keyword}
-                                />
+                                />*/}
                             </Grid>
-                                <Divider orientation="vertical" flexItem />
-                            <Grid item xs={1}>
+                                {/*<Divider orientation="vertical" flexItem />*/}
+                          {/*  <Grid item xs={1}>
                                 <IconButton color="primary" aria-label="More Contents" >
                                     <MoreVertIcon aria-controls="simple-menu" aria-aria-haspopup="true" onClick={this.handleClick}/>
                                 </IconButton>
@@ -87,15 +120,15 @@ class SearchBar extends Component {
                                     <MenuItem onClick={this.handleClose} value="일본어">일본어</MenuItem>
                                 </Menu>
                             </Grid>
-                        </Grid>
-                        <Grid item xs={2}>
+                        </Grid>*/}
+                       {/* <Grid item xs={2}>
                             <IconButton type="submit" aria-label="search" style={{backgroundColor:"#fff"}}>
                                 <SearchIcon 
                                     onClick={searchBtnOnClick} 
                                 />
                             </IconButton>
+                        </Grid>*/}
                         </Grid>
-                        
                 </Grid>
 
             </div>

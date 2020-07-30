@@ -5,7 +5,7 @@ import WordTable from './components/WordTable';
 import InsertWord from './components/InsertWord';
 import InsertLang from './components/InsertLang';
 import Relationship from './components/Relationship';
-import Relationship1 from './components/Relationship1';
+import Relationship1 from './components/EditRelationship';
 import EditRelationship from './components/EditRelationship';
 import './App.css';
 import { Grid } from '@material-ui/core';
@@ -150,7 +150,7 @@ class App extends Component {
         this.state= { 
             keyword : "",
             checked : false,
-            searchLang : "eng",
+            searchLang : "한국어",
             filterdDummyDatas : [],
             wordInfo : [
                 {
@@ -340,8 +340,10 @@ class App extends Component {
                                 keyword={this.state.keyword}
                                 changeKeyword={this.handleChangeKeyword}
                                 searchBtnOnClick={this.handleFilterdDummyDatas}/>
-                            <SearchLang selectedLangValue={this.state.searchLang}
-                                        filterdLanguage={this.handleFilterdLanguage}/>
+                             <SearchLang selectedLangValue={this.state.searchLang}
+                                 filterdLanguage={this.handleFilterdLanguage}/>
+
+
                             <WordTable
                                   //data={this.state.keyword ? this.state.filterdDummyDatas : defaultDatas}
                                   data={this.state.filterdDummyDatas}
