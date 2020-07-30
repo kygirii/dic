@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { AppBar, Toolbar, IconButton, Button, List, ListItem, ListItemIcon, ListItemText, Drawer, withStyles } from '@material-ui/core';
+import { Grid, AppBar, Toolbar, IconButton, Button, List, ListItem, ListItemIcon, ListItemText, Drawer, withStyles } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import OpenInBrowserIcon from '@material-ui/icons/OpenInBrowser';
@@ -79,7 +79,7 @@ class NavBar extends Component {
         return (
             <div>
                 <Fragment>
-                    <AppBar position="static">
+                    <AppBar position="static" style={{ background : '#000000' }}>
                         <Toolbar>
                             <IconButton 
                                 edge="start" 
@@ -92,7 +92,25 @@ class NavBar extends Component {
                             <Drawer anchor={anchor} open={this.state[anchor]} onClose={this.toggleDrawer(anchor, false)}>
                                 {this.list(anchor)}
                             </Drawer>
-                            <Button color="inherit">K-WORD</Button>
+                            <Grid container>
+                                {['Open', 'New', 'Edit', 'Save', 'Test'].map((text, index) => (
+                                    <Button color="inherit">
+                                        {text}
+                                    </Button>
+                                ))}
+                            </Grid>
+
+                            <Grid justify="flex-end">
+                                <Grid container justify="space-around">
+                                    <Button color="inherit">
+                                        <ExitToAppIcon />
+                                        Exit
+                                    </Button>
+                                </Grid>
+
+                            </Grid>
+
+
                         </Toolbar>
                     </AppBar>
                 </Fragment>
