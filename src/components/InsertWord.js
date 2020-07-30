@@ -1,9 +1,9 @@
 import React, { Component, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
-import { FormLabel, TextField } from '@material-ui/core';
+import {FormLabel, TextField, Typography} from '@material-ui/core';
 
 
-class InsertWord extends Component {
+export default class InsertWord extends Component {
 
     render() { 
     
@@ -16,32 +16,37 @@ class InsertWord extends Component {
         return (
             <div>
                 <form>
-
                             <Grid container spacing={2} alignItems="center">
-                                    <Grid item xs={4}>
-                                        <FormLabel>용어입력</FormLabel>
+                                    <Grid item xs={12}>
+                                        <Typography variant="h5" component="h2" color="primary">
+                                            용어입력
+                                        </Typography>
                                     </Grid>
                             </Grid>
-                            <Grid container spacing={2} alignItems="center" >
-                                        <Grid item xs={2}>
-                                            <FormLabel>용어명</FormLabel>
+                            <Grid container spacing={2} alignItems="center">
+                                        <Grid item xs={3}>
+                                            <Typography variant="h6" component="h6">
+                                                용어명
+                                            </Typography>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={9}>
                                             <TextField id="out-lined-basic" 
                                                     placeholder="ex: 코로나"
                                                     name="name"
                                                     value={data.name}
-                                                    margin="dense" 
-                                                    variant="outlined" 
+                                                    margin="dense"
+                                                    variant="outlined"
                                                     onChange={insertWordInfo}
                                             />
                                         </Grid>
                             </Grid>     
                             <Grid container spacing={2} alignItems="center" >
-                                        <Grid item xs={2}>
-                                            <FormLabel>범주</FormLabel>
+                                        <Grid item xs={3}>
+                                            <Typography variant="h6" component="h6">
+                                                범주
+                                            </Typography>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={9}>
                                             <TextField id="out-lined-basic" 
                                                         placeholder="ex: 질병"
                                                         margin="dense"
@@ -53,10 +58,12 @@ class InsertWord extends Component {
                             </Grid>     
                         
                             <Grid container spacing={2} alignItems="center" >
-                                        <Grid item xs={2}>
-                                            <FormLabel>개체명</FormLabel>
+                                        <Grid item xs={3}>
+                                            <Typography variant="h6" component="h6">
+                                                개체명
+                                            </Typography>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={9}>
                                             <TextField id="out-lined-basic" 
                                                         placeholder=""
                                                         name="entity"
@@ -71,5 +78,3 @@ class InsertWord extends Component {
         );
     }
 }
-
-export default InsertWord;

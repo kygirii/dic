@@ -61,6 +61,7 @@ class SearchBar extends Component {
                         </Grid>
                         <Grid item xs={6} container alignItems="center" justify="center" style={{backgroundColor:"#fff"}}>
                             <Grid item xs={10}>
+                                <Typography>질의어</Typography>
                                 <InputBase
                                     placeholder={"검색어 입력"} 
                                     inputProps={{ 'aria-label': 'Search' }}
