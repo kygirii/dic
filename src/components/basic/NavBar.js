@@ -92,9 +92,9 @@ class NavBar extends Component {
                             <Drawer anchor={anchor} open={this.state[anchor]} onClose={this.toggleDrawer(anchor, false)}>
                                 {this.list(anchor)}
                             </Drawer>
-                            <Grid container>
+                            <Grid container >
                                 {['Open', 'New', 'Edit', 'Save', 'Test'].map((text, index) => (
-                                    <Button color="inherit">
+                                    <Button color="inherit" >
                                         {text}
                                     </Button>
                                 ))}

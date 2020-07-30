@@ -57,6 +57,7 @@ class SearchBar extends Component {
            height : '50px',
            padding : '24px',
            justify : 'center',
+           width : '100%',
        }
        const { changeKeyword, searchBtnOnClick, keyword } = this.props; 
 
@@ -71,11 +72,11 @@ class SearchBar extends Component {
                 {/*           */}
                 {/*    </Grid> */}
                 {/*</Grid>*/}
-                     <Grid container alignItems="center" direction="row" justify="center" spacing={6} >
-                        <Grid item xs={4} container >
+                     <Grid container alignItems="center" direction="row" justify="center" spacing={30} >
+                        <Grid item xs={2} container >
                             <Typography>질의어 {this.state.searchLang}</Typography>
                         </Grid>
-                        <Grid item xs={6} container alignItems="center" justify="center" >
+                        <Grid item xs={6} container alignItems="center" justify="center">
                             <Grid item xs={20}>
                                 <FormControl className={clsx(classes.margin, classes.withoutLabel, classes.textField)}>
                                     <Input
@@ -84,15 +85,16 @@ class SearchBar extends Component {
                                         onChange={changeKeyword}
                                         endAdornment={
                                                         <InputAdornment position="end">
-                                                            <IconButton type="submit" aria-label="search" style={{backgroundColor:"#fff"}}>
+
                                                                 <SearchIcon
                                                                 onClick={searchBtnOnClick}
                                                                 />
-                                                            </IconButton>
+
                                                         </InputAdornment>
                                                      }
                                         inputProps={{'aria-label' : 'search'}}
                                         placeholder={"검색어를 입력해주세요"}
+                                        style={{width: '100%'}}
                                     />
                                 </FormControl>
                                 {/*                <InputBase
