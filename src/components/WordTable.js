@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { TableHead, TableCell, TableBody, TableRow, Table, Checkbox } from '@material-ui/core';
+import {TableHead, TableCell, TableBody, TableRow, Table, Checkbox, Typography} from '@material-ui/core';
 
-class WordTable extends Component {
+export default class WordTable extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -56,5 +56,3 @@ class WordTable extends Component {
         );
     }
 }
-
-export default WordTable;
