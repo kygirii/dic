@@ -15,11 +15,34 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from "@material-ui/core/Typography";
-import makeStyles from "@material-ui/core/styles/makeStyles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
-    root: {
+
+const styles = {
+    root:{
+        padding: '127px 360px 151px',
+    },
+    card: {
         borderRadius:50,
+        width: '100%',
+        height: '100%',
+    },
+    content : {
+        padding: '20px',
+        width: '100%',
+        height: '100%',
+    },
+}
+const useStyles = makeStyles({
+    root:{
+      margin: '127px 360px 151px',
+    },
+    card: {
+        borderRadius:50,
+        padding : '20px',
+    },
+    content : {
+        padding: '20px'
     },
     bullet: {
         display: 'inline-block',
@@ -140,7 +163,293 @@ const wordDummyData = [
 
         ]
     }, //Word
-    
+    {
+        id : "10000006",
+        name : "그냥감기2",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000007",
+        name : "그냥감기3",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000008",
+        name : "그냥감기4",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000009",
+        name : "그냥감기5",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000010",
+        name : "그냥감기6",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000011",
+        name : "그냥감기7",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000012",
+        name : "그냥감기8",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000013",
+        name : "그냥감기9",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000014",
+        name : "그냥감기10",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000015",
+        name : "그냥감기11",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+    {
+        id : "10000016",
+        name : "그냥감기12",
+        category : "질병",
+        entity : "개체",
+        relations : [
+            {  최상위어 : "질병" },
+            {  상위어 : ["감기", "인플루엔자"] },
+            {  하위어 : ["콧물", "기침", "몸살"] },
+            {  동의어 : ["코비드", "독감", "신종코로나"] },
+            {  연관어 : ["진단키트", "k방역", "질병관리본부","정은경", "사회적거리두기"] },
+            {  유의어 : ["코비드", "우한폐렴", "신종코로나"] }
+        ],
+        languages : [
+            {
+                영어 : "cold",
+            },
+            {
+                중국어 : "冷",
+            },
+            {
+                일본어 : "鼻炎"
+            }
+
+        ]
+    }, //Word
+
 ]
 
 class App extends Component {
@@ -331,20 +640,24 @@ class App extends Component {
             /> */}
 
           <hr />
-
-              <Grid item xs={12} container>
+            <div className={classes.root}>
+              <Grid item xs={12} container className={classes.root}>
                  <Grid item xs={4}>
-                    <Card className={classes.root}>
+                    <Card className={classes.card}>
                         <CardContent>
                             <SearchBar
+                                className={classes.content}
                                 keyword={this.state.keyword}
                                 changeKeyword={this.handleChangeKeyword}
                                 searchBtnOnClick={this.handleFilterdDummyDatas}/>
-                             <SearchLang selectedLangValue={this.state.searchLang}
+                             <SearchLang
+                                 className={classes.content}
+                                 selectedLangValue={this.state.searchLang}
                                  filterdLanguage={this.handleFilterdLanguage}/>
 
 
                             <WordTable
+                                  className={classes.content}
                                   //data={this.state.keyword ? this.state.filterdDummyDatas : defaultDatas}
                                   data={this.state.filterdDummyDatas}
                                   check={this.handleCheckList}
@@ -354,14 +667,15 @@ class App extends Component {
                   </Grid>
                   <Grid container xs={8}>
                               <Grid item xs={6}>
-                                  <Card className={classes.root}>
+                                  <Card className={classes.card}>
                                       <CardContent>
                                   {this.state.wordInfo.map((data, index) => {
                                       return  <InsertWord
-                                          data={data}
-                                          insertWordInfo={this.handleInsertWordInfo}
-                                          key={index}
-                                      />
+                                                  className={classes.content}
+                                                  data={data}
+                                                  insertWordInfo={this.handleInsertWordInfo}
+                                                  key={index}
+                                               />
                                   })}
                                       </CardContent>
                                   </Card>
@@ -369,23 +683,25 @@ class App extends Component {
 
 
                         <Grid item xs={6}>
-                            <Card className={classes.root}>
+                            <Card className={classes.card}>
                                 <CardContent>
                                     {this.state.wordInfo.map((data, index) => {
                                         return  <InsertLang
-                                            insertLang={this.handleInsertLang}
-                                            datas={data}
-                                            key={index}
-                                        />
+                                                    className={classes.content}
+                                                    insertLang={this.handleInsertLang}
+                                                    datas={data}
+                                                    key={index}
+                                                />
                                     })}
                                 </CardContent>
                             </Card>
                         </Grid>
                         <Grid item xs={12}>
-                            <Card className={classes.root}>
+                            <Card className={classes.card}>
                                 <CardContent>
                           {this.state.wordInfo.map((data, index) =>
                               <EditRelationship
+                                  className={classes.content}
                                   insertRelation={this.handleInsertRelationWord}
                                   datas={data}
                                   key={index}
@@ -395,9 +711,10 @@ class App extends Component {
                             </Card>
                         </Grid>
                 </Grid>
-          </Grid>
+              </Grid>
+            </div>
       </div>
     );
   }
 }
-export default App;
+export default withStyles(styles)(App);

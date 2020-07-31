@@ -12,11 +12,11 @@ import { Grid, Radio, RadioGroup, FormControlLabel, FormControl} from '@material
 
 
         return (
-            <div>
-                <FormControl component="fieldset" style={{width : '100%'}}>
+            <div style={{width:'100%'}}>
+                <FormControl component="fieldset" >
                     <FormLabel component={"legend"} style={{color: 'primary'}}>검색대상 언어</FormLabel>
                     <br/>
-                    <RadioGroup style={{display: "flex", width: "auto", flexDirection : "row", justifyContent: 'space-around'}} aria-label={"searchLanguage"} name={"lang"} value={selectedLangValue} onChange={filterdLanguage} >
+                    <RadioGroup style={{display: "flex", flexDirection : "row", justifyContent: 'space-around'}} aria-label={"searchLanguage"} name={"lang"} value={selectedLangValue} onChange={filterdLanguage} >
 
                         <FormControlLabel value="힌국어" control={<Radio/>} label="한국어" />
                         <FormControlLabel value="영어" control={<Radio/>} label="영어" />

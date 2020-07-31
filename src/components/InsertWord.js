@@ -25,7 +25,7 @@ export default class InsertWord extends Component {
                             </Grid>
                             <Grid container spacing={2} alignItems="center">
                                         <Grid item xs={3}>
-                                            <Typography variant="h6" component="h6">
+                                            <Typography variant="h7" component="h7">
                                                 용어명
                                             </Typography>
                                         </Grid>
@@ -42,7 +42,7 @@ export default class InsertWord extends Component {
                             </Grid>     
                             <Grid container spacing={2} alignItems="center" >
                                         <Grid item xs={3}>
-                                            <Typography variant="h6" component="h6">
+                                            <Typography variant="h7" component="h7">
                                                 범주
                                             </Typography>
                                         </Grid>
@@ -59,7 +59,7 @@ export default class InsertWord extends Component {
                         
                             <Grid container spacing={2} alignItems="center" >
                                         <Grid item xs={3}>
-                                            <Typography variant="h6" component="h6">
+                                            <Typography variant="h7" component="h7">
                                                 개체명
                                             </Typography>
                                         </Grid>

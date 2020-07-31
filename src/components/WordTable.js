@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {TableHead, TableCell, TableBody, TableRow, Table, Checkbox, Paper} from '@material-ui/core';
+import {TableHead, TableCell, TableBody, TableRow, Table, Checkbox, Paper, TablePagination } from '@material-ui/core';
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import TableContainer from '@material-ui/core/TableContainer';
 
@@ -14,11 +14,11 @@ const StyledTableCell = withStyles((theme) => ({
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
-    root: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.action.hover,
-        },
-    },
+    // root: {
+    //     '&:nth-of-type(odd)': {
+    //         backgroundColor: theme.palette.action.hover,
+    //     },
+    // },
 }))(TableRow);
 
 const useStyles = makeStyles({
@@ -27,6 +27,7 @@ const useStyles = makeStyles({
     },
     container: {
         maxHeight: 440,
+        borderRadius:50,
     },
     table: {
         minWidth: 700,
@@ -41,7 +42,7 @@ export default class WordTable extends Component {
         this.state = {
             checkedValues: [],
             page: 0,
-            rowsPerPage: 10,
+            rowsPerPage: 4,
         }
     }
 
@@ -66,39 +67,51 @@ export default class WordTable extends Component {
         console.log('checked', this.state.checked);
         const { data, check } = this.props;
         const classes = this.props;
+        const {page, rowsPerPage} = this.state;
 
 
         return (
             <div>
-                <TableContainer component={Paper}>
-                    <Table className={classes.table} aria-label="search result table">
-                        <TableHead>
-                            <TableRow borderRadius='50%'  style={{backgroundColor:'#000000', color: 'white',}}>
-                                <StyledTableCell align={'center'}>No.</StyledTableCell>
-                                <StyledTableCell align={'center'}>용어명</StyledTableCell>
-                                <StyledTableCell align={'center'}>범주</StyledTableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {
-                                data.map(( o, index)=>{
-                                    return (
-                                    <StyledTableRow key={o.name + "_"+ index}>
-                                        <StyledTableCell component="th" align={'center'}>
-                                            <Checkbox value={o.name}
-                                                      name={o.name}
-                                                      onClick={check}
-                                                      />{index + 1}
-                                        </StyledTableCell>
-                                        <StyledTableCell align={'center'}>{o.name}</StyledTableCell>
-                                        <StyledTableCell align={'center'}>{o.category}</StyledTableCell>
-                                    </StyledTableRow>);
-                                })
+                <Paper className={classes.root}>
+                    <TableContainer className={classes.container}>
+                        <Table stickyHeader aria-label="search result table" >
+                            <TableHead>
+                                <TableRow borderRadius='50%'  style={{backgroundColor:'#000000', color: 'white',}}>
+                                    <StyledTableCell align={'center'}>No.</StyledTableCell>
+                                    <StyledTableCell align={'center'}>용어명</StyledTableCell>
+                                    <StyledTableCell align={'center'}>범주</StyledTableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {
+                                    data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(( o, index)=>{
+                                        return (
+                                        <StyledTableRow hover role="checkbox" tabIndex={-1} key={o.name + "_"+ index}>
+                                            <StyledTableCell component="th" align={'center'}>
+                                                <Checkbox value={o.name}
+                                                          name={o.name}
+                                                          onClick={check}
+                                                          />{index + 1}
+                                            </StyledTableCell>
+                                            <StyledTableCell align={'center'}>{o.name}</StyledTableCell>
+                                            <StyledTableCell align={'center'}>{o.category}</StyledTableCell>
+                                        </StyledTableRow>);
+                                    })
 
-                            }
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                                }
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                    <TablePagination
+                        rowsPerPageOptions={[10, 25, 100]}
+                        component="div"
+                        count={data.length}
+                        rowsPerPage={rowsPerPage}
+                        page={page}
+                        onChangePage={this.handleChangePage}
+                        onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                    />
+                </Paper>
             </div>
         );
     }

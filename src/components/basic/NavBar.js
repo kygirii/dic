@@ -61,7 +61,7 @@ class NavBar extends Component {
         onKeyDown={this.toggleDrawer(anchor, false)}
         >
             <List>
-                {['Open', 'New', 'Edit', 'Save', 'Test', 'Exit'].map((text, index) => (
+                {['New', 'Edit', 'Save', 'Exit'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>{this.iconSwitch(text)}</ListItemIcon>
                         <ListItemText primary={text} />
@@ -93,7 +93,7 @@ class NavBar extends Component {
                                 {this.list(anchor)}
                             </Drawer>
                             <Grid container >
-                                {['Open', 'New', 'Edit', 'Save', 'Test'].map((text, index) => (
+                                {['New', 'Edit', 'Save'].map((text, index) => (
                                     <Button color="inherit" >
                                         {text}
                                     </Button>

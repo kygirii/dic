@@ -35,7 +35,7 @@ class InsertLang extends Component {
                                 return (
                                     <Grid container spacing={2} alignItems="center" >
                                         <Grid item xs={3} key={index}>
-                                            <Typography variant="h6" component="h6">
+                                            <Typography variant="h7" component="h7">
                                                 {Object.keys(data)[0]}
                                             </Typography>
                                         </Grid>

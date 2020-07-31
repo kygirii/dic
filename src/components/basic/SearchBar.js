@@ -54,10 +54,11 @@ class SearchBar extends Component {
 
     render() {
        const style={
-           height : '50px',
-           padding : '24px',
+           height : '100%',
+           padding : '10px',
            justify : 'center',
            width : '100%',
+           align : 'center',
        }
        const { changeKeyword, searchBtnOnClick, keyword } = this.props; 
 
@@ -72,12 +73,12 @@ class SearchBar extends Component {
                 {/*           */}
                 {/*    </Grid> */}
                 {/*</Grid>*/}
-                     <Grid container alignItems="center" direction="row" justify="center" spacing={30} >
-                        <Grid item xs={2} container >
+                     <Grid container alignItems="center" direction="row" justify="center" spacing={8} >
+                        <Grid item xscontainer >
                             <Typography>질의어 {this.state.searchLang}</Typography>
                         </Grid>
-                        <Grid item xs={6} container alignItems="center" justify="center">
-                            <Grid item xs={20}>
+                        <Grid item xs container alignItems="center" justify="center">
+                            <Grid item xs>
                                 <FormControl className={clsx(classes.margin, classes.withoutLabel, classes.textField)}>
                                     <Input
                                         id="standard-adornment-search"
