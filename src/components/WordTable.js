@@ -28,6 +28,7 @@ const useStyles = makeStyles({
     container: {
         maxHeight: 440,
         borderRadius:50,
+        width: '100%',
     },
     table: {
         minWidth: 700,
@@ -73,10 +74,10 @@ export default class WordTable extends Component {
         return (
             <div>
                 <Paper className={classes.root}>
-                    <TableContainer className={classes.container}>
+                    <TableContainer className={classes.container} >
                         <Table stickyHeader aria-label="search result table" >
                             <TableHead>
-                                <TableRow borderRadius='50%'  style={{backgroundColor:'#000000', color: 'white',}}>
+                                <TableRow style={{backgroundColor:'#000000', color: 'white',}}>
                                     <StyledTableCell align={'center'}>No.</StyledTableCell>
                                     <StyledTableCell align={'center'}>용어명</StyledTableCell>
                                     <StyledTableCell align={'center'}>범주</StyledTableCell>
@@ -91,7 +92,7 @@ export default class WordTable extends Component {
                                                 <Checkbox value={o.name}
                                                           name={o.name}
                                                           onClick={check}
-                                                          />{index + 1}
+                                                          />{o.id}
                                             </StyledTableCell>
                                             <StyledTableCell align={'center'}>{o.name}</StyledTableCell>
                                             <StyledTableCell align={'center'}>{o.category}</StyledTableCell>

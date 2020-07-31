@@ -73,7 +73,7 @@ class SearchBar extends Component {
                 {/*           */}
                 {/*    </Grid> */}
                 {/*</Grid>*/}
-                     <Grid container alignItems="center" direction="row" justify="center" spacing={8} >
+                     <Grid container alignItems="center" direction="row" justify="center" spacing={10} >
                         <Grid item xscontainer >
                             <Typography>질의어 {this.state.searchLang}</Typography>
                         </Grid>

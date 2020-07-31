@@ -15,24 +15,8 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from "@material-ui/core/Typography";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
-
-const styles = {
-    root:{
-        padding: '127px 360px 151px',
-    },
-    card: {
-        borderRadius:50,
-        width: '100%',
-        height: '100%',
-    },
-    content : {
-        padding: '20px',
-        width: '100%',
-        height: '100%',
-    },
-}
 const useStyles = makeStyles({
     root:{
       margin: '127px 360px 151px',
@@ -54,6 +38,13 @@ const useStyles = makeStyles({
     },
     pos: {
         marginBottom: 12,
+    },
+    rows : {
+        position: 'static'
+    },
+    row : {
+
+        margin : 0,
     },
 });
 
@@ -630,91 +621,85 @@ class App extends Component {
     
     
     return (
-      <div>
-          <NavBar />
-
-          {/* <Search 
-            keyword={this.state.keyword}
-            changeKeyword={this.handleChangeKeyword}
-            searchBtnOnClick={this.handleFilterdDummyDatas}
-            /> */}
-
-          <hr />
-            <div className={classes.root}>
-              <Grid item xs={12} container className={classes.root}>
-                 <Grid item xs={4}>
-                    <Card className={classes.card}>
-                        <CardContent>
-                            <SearchBar
-                                className={classes.content}
-                                keyword={this.state.keyword}
-                                changeKeyword={this.handleChangeKeyword}
-                                searchBtnOnClick={this.handleFilterdDummyDatas}/>
-                             <SearchLang
-                                 className={classes.content}
-                                 selectedLangValue={this.state.searchLang}
-                                 filterdLanguage={this.handleFilterdLanguage}/>
-
-
-                            <WordTable
-                                  className={classes.content}
-                                  //data={this.state.keyword ? this.state.filterdDummyDatas : defaultDatas}
-                                  data={this.state.filterdDummyDatas}
-                                  check={this.handleCheckList}
-                              />
-                        </CardContent>
-                    </Card>
+      <div className={classes.root} >
+          <div>
+              <NavBar />
+          </div>
+          <div className={classes.rows}>
+              <div>
+                  <Grid container spacing={2}>
+                      <Grid item xs={4}>
+                          <Card className={classes.card}>
+                              <CardContent>
+                                  <SearchBar
+                                      className={classes.content}
+                                      keyword={this.state.keyword}
+                                      changeKeyword={this.handleChangeKeyword}
+                                      searchBtnOnClick={this.handleFilterdDummyDatas}/>
+                                  <SearchLang
+                                      className={classes.content}
+                                      selectedLangValue={this.state.searchLang}
+                                      filterdLanguage={this.handleFilterdLanguage}/>
+                                  <WordTable
+                                      className={classes.content}
+                                      //data={this.state.keyword ? this.state.filterdDummyDatas : defaultDatas}
+                                      data={this.state.filterdDummyDatas}
+                                      check={this.handleCheckList}
+                                  />
+                              </CardContent>
+                          </Card>
+                      </Grid>
                   </Grid>
-                  <Grid container xs={8}>
-                              <Grid item xs={6}>
-                                  <Card className={classes.card}>
-                                      <CardContent>
+              </div>
+              <div className={classes.row}>
+                  <Grid container spacing={2}>
+                      <Grid item xs={4}>
+                          <Card className={classes.card}>
+                              <CardContent>
                                   {this.state.wordInfo.map((data, index) => {
                                       return  <InsertWord
-                                                  className={classes.content}
-                                                  data={data}
-                                                  insertWordInfo={this.handleInsertWordInfo}
-                                                  key={index}
-                                               />
+                                          className={classes.content}
+                                          data={data}
+                                          insertWordInfo={this.handleInsertWordInfo}
+                                          key={index}
+                                      />
                                   })}
-                                      </CardContent>
-                                  </Card>
-                              </Grid>
-
-
-                        <Grid item xs={6}>
-                            <Card className={classes.card}>
-                                <CardContent>
-                                    {this.state.wordInfo.map((data, index) => {
-                                        return  <InsertLang
-                                                    className={classes.content}
-                                                    insertLang={this.handleInsertLang}
-                                                    datas={data}
-                                                    key={index}
-                                                />
-                                    })}
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Card className={classes.card}>
-                                <CardContent>
-                          {this.state.wordInfo.map((data, index) =>
-                              <EditRelationship
-                                  className={classes.content}
-                                  insertRelation={this.handleInsertRelationWord}
-                                  datas={data}
-                                  key={index}
-                              />
-                          )}
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                </Grid>
-              </Grid>
-            </div>
+                              </CardContent>
+                          </Card>
+                      </Grid>
+                      <Grid item xs={4}>
+                          <Card className={classes.card}>
+                              <CardContent>
+                                  {this.state.wordInfo.map((data, index) => {
+                                      return  <InsertLang
+                                          className={classes.content}
+                                          insertLang={this.handleInsertLang}
+                                          datas={data}
+                                          key={index}
+                                      />
+                                  })}
+                              </CardContent>
+                          </Card>
+                      </Grid>
+                      <Grid item xs={8}>
+                          <Card className={classes.card}>
+                              <CardContent>
+                                  {this.state.wordInfo.map((data, index) =>
+                                      <EditRelationship
+                                          className={classes.content}
+                                          insertRelation={this.handleInsertRelationWord}
+                                          datas={data}
+                                          key={index}
+                                      />
+                                  )}
+                              </CardContent>
+                          </Card>
+                      </Grid>
+                  </Grid>
+              </div>
+          </div>
       </div>
     );
   }
 }
-export default withStyles(styles)(App);
+export default App;
